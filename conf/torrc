@@ -1,0 +1,23 @@
+Nickname #TOBEFILLED
+ContactInfo #TOBEFILLED 
+#MyFamily 
+
+ORPort 9001
+#DirPort 9030
+ControlPort 9051
+SocksPort 0
+
+DataDirectory /var/lib/tor
+
+#RelayBandwidthRate 2600 KB  # Throttle traffic to 100KB/s (800Kbps)
+#RelayBandwidthBurst 4800 KB # But allow bursts up to 200KB/s (1600Kbps)
+
+AccountingMax 5 TBytes
+AccountingStart month 1 0:00
+
+CookieAuthentication 1
+ExitRelay 0
+ExitPolicy reject *:*
+
+## Send all messages of level 'notice' or higher to /var/log/tor/notices.log
+Log notice file /var/log/tor/notices.log

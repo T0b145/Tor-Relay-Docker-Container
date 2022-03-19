@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  tor-node:
+    build:
+      context: ./images/alpine_latest/
+      network: "host"
+    container_name: tor-node
+    restart: unless-stopped
+    volumes:
+      - ./data:/var/lib/tor/
+      - ./log:/var/log/tor/
+      - ./conf/torrc:/etc/tor/torrc:ro
+      - /etc/localtime:/etc/localtime:ro
+    user: "1000:1000"
+    network_mode: "host"
